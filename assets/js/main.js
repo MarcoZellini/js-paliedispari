@@ -43,6 +43,11 @@ function isEven (number) {
 }
 
 //Definisco i valori di cui ho bisogno
+const bodyElement = document.querySelector('body');
+const userChoiseElement = document.createElement('div');
+const userNumberElement = document.createElement('div');
+const computerNumberElement = document.createElement('div');
+const resultElement = document.createElement('div');
 let userChoise;
 let userNumber;
 let computerNumber;
@@ -61,31 +66,8 @@ do {
 //Eseguo i calcoli necessari
 computerNumber = randomNumberGenerator();
 sum = sumCalcolator(userNumber, computerNumber);
-console.log(userChoise, sum);
-
-//Controllo il risultato dei miei calcoli
-if (userChoise.toLowerCase() === 'pari') {
-    if (isEven(sum)) {
-        console.log('Hai Vinto!');
-    } else {
-        console.log('Hai Perso!');
-    }
-} else {
-    if (!isEven(sum)) {
-        console.log('Hai Vinto!');
-    } else {
-        console.log('Hai Perso!');
-    }
-}
 
 //Mostro il risultato sul DOM
-const bodyElement = document.querySelector('body');
-const userChoiseElement = document.createElement('div');
-const userNumberElement = document.createElement('div');
-const computerNumberElement = document.createElement('div');
-const resultElement = document.createElement('div');
-
-
 bodyElement.append(userChoiseElement);
 bodyElement.append(userNumberElement);
 bodyElement.append(computerNumberElement);
@@ -95,7 +77,6 @@ userChoiseElement.append(`La scelta del giocatore e' stata: ${userChoise}`);
 userNumberElement.append(`Il numero scelto dal giocatore e' stato: ${userNumber}`);
 computerNumberElement.append(`Il numero scelto dal computer e' stato: ${computerNumber}`);
 
-//Controllo il risultato dei miei calcoli
 if (userChoise.toLowerCase() === 'pari') {
     if (isEven(sum)) {
         resultElement.append(`Ha vinto il giocatore!`);
