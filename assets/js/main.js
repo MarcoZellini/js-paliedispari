@@ -77,3 +77,35 @@ if (userChoise.toLowerCase() === 'pari') {
         console.log('Hai Perso!');
     }
 }
+
+//Mostro il risultato sul DOM
+const bodyElement = document.querySelector('body');
+const userChoiseElement = document.createElement('div');
+const userNumberElement = document.createElement('div');
+const computerNumberElement = document.createElement('div');
+const resultElement = document.createElement('div');
+
+
+bodyElement.append(userChoiseElement);
+bodyElement.append(userNumberElement);
+bodyElement.append(computerNumberElement);
+bodyElement.append(resultElement);
+
+userChoiseElement.append(`La scelta del giocatore e' stata: ${userChoise}`);
+userNumberElement.append(`Il numero scelto dal giocatore e' stato: ${userNumber}`);
+computerNumberElement.append(`Il numero scelto dal computer e' stato: ${computerNumber}`);
+
+//Controllo il risultato dei miei calcoli
+if (userChoise.toLowerCase() === 'pari') {
+    if (isEven(sum)) {
+        resultElement.append(`Ha vinto il giocatore!`);
+    } else {
+        resultElement.append(`Ha vinto il computer!`);
+    }
+} else {
+    if (!isEven(sum)) {
+        resultElement.append(`Ha vinto il giocatore!`);
+    } else {
+        resultElement.append(`Ha vinto il computer!`);
+    }
+}
