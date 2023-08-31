@@ -25,6 +25,26 @@ function isPalindroma(parola) {
     return palindroma;
 }
 
+/**
+ * ###isPalindroma
+ * > This function verify if a word is palindrome
+ * @param {string} parola Stringa
+ * @returns {boolean} It Returns a boolean value
+ */
+/* function isPalindroma(parola) {
+    let reverseParola;
+    let palindroma = false;
+
+    reverseParola = parola.split('').reverse().join('');
+
+
+    if (parola === reverseParola) {
+        palindroma = true;
+    }
+
+    return palindroma;
+} */
+
 //Definisco i valori di cui ho bisogno
 const bodyElement = document.querySelector('body');
 const userChoiseElement = document.createElement('div');
