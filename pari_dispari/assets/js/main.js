@@ -9,10 +9,12 @@
 //Definisco le funzioni di cui ho bisogno
 /**
  * ### randomNumberGenerator
- * @returns {number} This function returns a random value from 1 to 5;
+ * @param {number} min Minimum number generated
+ * @param {number} min Maxinum number generated
+ * @returns {number} This function returns a random value from min to max included;
  */
-function randomNumberGenerator() {
-    return Math.floor(Math.random() * 5) + 1;
+function randomNumberGenerator(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 /**
@@ -64,7 +66,7 @@ do {
 } while (userNumber < 1 || userNumber > 5 || isNaN(userNumber));
 
 //Eseguo i calcoli necessari
-computerNumber = randomNumberGenerator();
+computerNumber = randomNumberGenerator(1, 5);
 sum = sumCalcolator(userNumber, computerNumber);
 
 //Mostro il risultato sul DOM
